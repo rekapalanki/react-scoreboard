@@ -4,19 +4,16 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  text-align: center;
   user-select: none;
 }
 
 body {
   margin: 0;
-  background-color: #333;
   position: relative;
-}
-
-.wrapper {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
+  background-color: #333;
+  color: #ECFCFF;
+  font-family: leagueSpartan;
 }
 
 @font-face {
@@ -29,73 +26,143 @@ body {
   src: url("./fonts/Zero-Zero-Is/zero_and_zero_is.ttf");
 }
 
+/* GENERAL STYLES */
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+}
+
+.wrapper, .header, h1, .container, .box, .form-box, .counter, button {
+  position: absolute;
+  color: #E6F4F1;
+}
+
+.header, h1, .container {
+  width: 100vw;
+}
+
 /* HEADER STLYE */
 
 .header {
-  position: absolute;
-  width: 100vw;
   height: 30%;
 }
 
 h1 {
-  position: absolute;
   top: 10%;
-  width: 100%;
-  text-align: center;
-  border-radius: 0.25rem;
-  color: #ECFCFF;
-  font-size: 6rem;
+  font-size: 10vh;
   font-family: zeroZero;
   padding: 0.25rem;
+}
+
+#not-found {
+  font-family: sans-serif;
 }
 
 /* CONTAINER STYLE */
 
 .container {
-  position: absolute;
   top: 30%;
-  width: 100vw;
   height: 50%;
 }
 
-#box1 {
-  position: absolute;
+.box {
   width: 20%;
   height: 70%;
   top: 20%;
+}
+
+#box1 {
   left: 20%;
 }
 
 #box2 {
-  position: absolute;
-  width: 20%;
-  height: 70%;
-  top: 20%;
   left: 60%;
 }
 
 h2 {
-  text-align: center;
   text-transform: uppercase;
-  color: #E6F4F1;
-  font-size: 2rem;
-  font-family: leagueSpartan;
+  font-size: 3.5vh;
   padding: 0.25rem;
 }
 
-.counter-box {
-  position: absolute;
+.counter {
   left: 0;
   right: 0;
   height: 75%;
   text-align: center;
   background-color: #007296;
   border-radius: 0.25rem;
-  color: #E6F4F1;
-  font-size: 10rem;
+  font-size: 15vh;
   font-family: sans-serif;
 }
 
-.counter-box:hover {
+.counter:hover {
   color: white;
+}
+
+/* Form styles */
+
+.form-box {
+  width: 20%;
+  height: 70%;
+  left: 20%;
+}
+
+#formbox1 {
+  top: 20%;
+}
+
+#formbox2 {
+  top: 40%;
+}
+
+input[type=text] {
+  display: inline-block;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+  background-color: transparent;
+  color: #E6F4F1;
+}
+
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+
+/* Button styles */
+
+#button1 {
+  position: absolute;
+  top: 80%;
+  left: 40%;
+  font-weight: bold;
+  font-size: 2.5vh;
+  text-transform: uppercase;
+  background-color: #007296;
+  padding: 1rem;
+  border: 0;
+  border-radius: 0.25rem;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 800px) {
+
+  .form-box {
+    top: 20%;
+  }
+  
+  #formbox1 {
+    left: 20%;
+  }
+  
+  #formbox2 {
+    top: 20%;
+    left: 60%;
+  }
+
 }

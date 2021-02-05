@@ -14,7 +14,7 @@ const Counterboard = () => {
       <div className="header">
         <h1>Scoreboard</h1>
       </div>
-      <div className="container">
+      <div className="box-container">
         <div id="box1" className="box">
           <h2>Home</h2>
           <div className="counter" onClick={() => setCount(count + 1)}>

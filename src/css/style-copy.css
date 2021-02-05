@@ -1,20 +1,20 @@
 /* GENERAL STYLES */
 
 * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
   text-align: center;
+  user-select: none;
 }
 
 body {
+  margin: 0;
+  position: relative;
   background-color: #333;
   color: #ECFCFF;
   font-family: leagueSpartan;
 }
-
-.wrapper, .header, h1, .box-container, .box, .form-box, .counter, button {
-  color: #E6F4F1;
-}
-
-/* Typography */
 
 @font-face {
   font-family: "leagueSpartan";
@@ -26,26 +26,38 @@ body {
   src: url("./fonts/Zero-Zero-Is/zero_and_zero_is.ttf");
 }
 
-/* HEADER STLYE */
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+}
 
-.jumbotron .container h1 {
+.wrapper, .header, h1, .box-container, .box, .form-box, .counter, button {
+  position: absolute;
+  color: #E6F4F1;
+}
+
+.header, h1, .box-container {
+  width: 100vw;
+}
+
+/* HEADER STYLE */
+
+.header {
+  height: 30%;
+}
+
+h1 {
   top: 10%;
   font-size: 10vh;
   font-family: zeroZero;
-  padding: 1rem 0;
+  padding: 0.25rem;
 }
 
 #not-found {
   font-family: sans-serif;
 }
 
-/* Form styles */
-
-.container .row .form-box {
-  display: inline;
-}
-
-/* CONTAINER STYLE 
+/* CONTAINER STYLE */
 
 .box-container {
   top: 30%;
@@ -86,10 +98,10 @@ h2 {
 .counter:hover {
   color: white;
 }
-*/
+
 /* Form styles */
 
-/*.form-box {
+.form-box {
   width: 20%;
   height: 70%;
   left: 20%;
@@ -117,9 +129,9 @@ input[type=text] {
 
 input[type=text]:focus {
   border: 3px solid #555;
-}*/
-/*
- Button styles 
+}
+
+/* Button styles */
 
 #button1 {
   position: absolute;
@@ -134,7 +146,7 @@ input[type=text]:focus {
   border-radius: 0.25rem;
 }
 
- MEDIA QUERIES 
+/* MEDIA QUERIES */
 
 @media (min-width: 800px) {
 
@@ -151,4 +163,4 @@ input[type=text]:focus {
     left: 60%;
   }
 
-}*/
+}

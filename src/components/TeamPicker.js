@@ -10,7 +10,9 @@ class TeamPicker extends React.Component {
         event.preventDefault();
         // 2. Get the text from that input
         //const matchName = `${this.myInput1}-vs-${this.myInput2}-${Date.now()}`;
-        const kutyafuleName = `match-${Date.now()}`;
+        const teamOne = event.target[0].value;
+        const teamTwo = event.target[1].value;
+        const kutyafuleName = `match-${Date.now()}-${teamOne}-vs-${teamTwo}`;
         // 3. Change the page to /team1-vs-team2-Date.now()
         this.props.history.push(`/${kutyafuleName}`);
     }

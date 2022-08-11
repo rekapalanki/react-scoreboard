@@ -6,6 +6,12 @@ const Counterboard = () => {
   let [count, setCount] = React.useState(0);
   let [count2, setCount2] = React.useState(0);
 
+  const resetButton = document.querySelector('#button1');
+  console.log(resetButton);
+  const resetHandler = () => {
+    console.log('it works!');
+  }
+
   /*countHandler = () => {
     setCount(count + 1);
   }*/
@@ -31,7 +37,7 @@ const Counterboard = () => {
         </div>
       </div>
       
-      <div class="footer-wrapper">
+      <div className="footer-wrapper">
         <footer>
           <p>Made with ♥ in Budapest ©2020 | (CC 3.0 BY)</p>
         </footer>

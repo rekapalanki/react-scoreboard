@@ -3,17 +3,20 @@ import useState from "react";
 
 class Counterboard extends React.Component {
 
-  count = React.createRef;
-  count2 = React.createRef;
-
-  count = 0; 
-  count2 = 0;
-
+  constructor (props) {
+    super(props);
+    this.count = React.createRef;
+    this.count2 = React.createRef;
+    this.count = 0; 
+    this.count2 = 0;
+  }
+  
   countHandler = (event) => {
     let value = parseFloat(event.target.innerText);
     value++;
     event.target.innerText = value;
     console.log('Goooooooooooal!');
+    console.log(this.props.myInput1);
   }
 
   resetHandler = (event) => {
@@ -31,7 +34,7 @@ class Counterboard extends React.Component {
       <button id="button1" onClick={this.resetHandler}>Reset</button>
       <div className="box-container">
         <div id="box1" className="box">
-          <h2>Home</h2>
+          <h2>Home {this.props.myInput1}</h2>
           <div className="counter" id="team1" onClick={this.countHandler}>
           {this.count}
           </div>

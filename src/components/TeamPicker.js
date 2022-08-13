@@ -2,16 +2,20 @@ import React from "react";
 
 class TeamPicker extends React.Component {
 
-    myInput1 = React.createRef();
-    myInput2 = React.createRef();
+    constructor(props) {
+        super(props);
+        this.myInput1 = React.createRef();
+        this.myInput2 = React.createRef();
+    }
 
     startMatch = (event) => {
         // 1. Prevent the form from submitting
         event.preventDefault();
         // 2. Get the text from that input
-        //const matchName = `${this.myInput1}-vs-${this.myInput2}-${Date.now()}`;
-        const teamOne = event.target[0].value;
-        const teamTwo = event.target[1].value;
+//        const teamOne = event.target[0].value;
+//        const teamTwo = event.target[1].value;
+        const teamOne = this.myInput1.current.value;
+        const teamTwo = this.myInput2.current.value;
         const kutyafuleName = `match-${Date.now()}-${teamOne}-vs-${teamTwo}`;
         // 3. Change the page to /team1-vs-team2-Date.now()
         this.props.history.push(`/${kutyafuleName}`);

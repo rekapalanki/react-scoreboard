@@ -9,41 +9,12 @@ class Counterboard extends React.Component {
   count = 0; 
   count2 = 0;
 
-  /*countHandler1 = event => {
-    let counter = parseFloat(this.count);
-    counter++;
-    this.count = counter;
-    event.target.innerText = counter;
-  }
-
-  countHandler2 = event => {
-    let counter2 = parseFloat(this.count2);
-    counter2++;
-    this.count2 = counter2;
-    event.target.innerText = counter2;
-  }*/
-
-  countHandler = event => {
-    if (event.target.id == "team1") {
-      let counter = parseFloat(event.target.innerText);
-      counter++;
-      event.target.innerText = counter;
-      console.log('Team1 scored a goal!');
-    } else if (event.target.id == "team2") {
-      let counter2 = parseFloat(event.target.innerText);
-      counter2++
-      event.target.innerText = counter2;
-      console.log('Team2 scored a goal!');
-    }
-  }
-
-  /*countHandler = (event) => {
+  countHandler = (event) => {
     let value = parseFloat(event.target.innerText);
     value++;
-    console.dir(value);
     event.target.innerText = value;
     console.log('Goooooooooooal!');
-  }*/
+  }
 
   resetHandler = (event) => {
     event.target.parentElement.children[2].children[0].children[1].innerText = 0;

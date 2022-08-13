@@ -9,7 +9,7 @@ class Counterboard extends React.Component {
   count = 0; 
   count2 = 0;
 
-  countHandler1 = event => {
+  /*countHandler1 = event => {
     let counter = parseFloat(this.count);
     counter++;
     this.count = counter;
@@ -21,6 +21,20 @@ class Counterboard extends React.Component {
     counter2++;
     this.count2 = counter2;
     event.target.innerText = counter2;
+  }*/
+
+  countHandler = event => {
+    if (event.target.id == "team1") {
+      let counter = parseFloat(event.target.innerText);
+      counter++;
+      event.target.innerText = counter;
+      console.log('Team1 scored a goal!');
+    } else if (event.target.id == "team2") {
+      let counter2 = parseFloat(event.target.innerText);
+      counter2++
+      event.target.innerText = counter2;
+      console.log('Team2 scored a goal!');
+    }
   }
 
   /*countHandler = (event) => {
@@ -32,8 +46,6 @@ class Counterboard extends React.Component {
   }*/
 
   resetHandler = (event) => {
-    console.log(this.count);
-    this.count = 0; 
     event.target.parentElement.children[2].children[0].children[1].innerText = 0;
     event.target.parentElement.children[2].children[1].children[1].innerText = 0;
     console.log('Reset value');
@@ -49,13 +61,13 @@ class Counterboard extends React.Component {
       <div className="box-container">
         <div id="box1" className="box">
           <h2>Home</h2>
-          <div className="counter" onClick={this.countHandler1}>
+          <div className="counter" id="team1" onClick={this.countHandler}>
           {this.count}
           </div>
         </div>
         <div id="box2" className="box">
           <h2>Visitor</h2>
-          <div className="counter" onClick={this.countHandler2}>
+          <div className="counter" id="team2" onClick={this.countHandler}>
           {this.count2}
           </div>
         </div>

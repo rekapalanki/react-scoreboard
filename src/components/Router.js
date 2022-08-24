@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import TeamPicker from "./TeamPicker";
-import App from "./App";
 import NotFound from "./NotFound";
 import Counterboard from "./Counterboard";
 

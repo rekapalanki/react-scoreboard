@@ -24,10 +24,8 @@ class TeamPicker extends React.Component {
     render() {
         return (
             <div className="wrapper">
-                <div className="jumbotron">
-                    <div className="container">
-                        <h1>Enter team names</h1>
-                    </div>
+                <div className="container">
+                    <h1>Enter team names</h1>
                 </div>
                 <div className="box-container container">
                     <div className="row">&nbsp;</div>

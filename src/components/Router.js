@@ -3,12 +3,13 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import TeamPicker from "./TeamPicker";
 import App from "./App";
 import NotFound from "./NotFound";
+import Counterboard from "./Counterboard";
 
 const Router = () => (
     <BrowserRouter>
         <Switch>
-            <Route exact path="/" component={TeamPicker} />
-            <Route path="/:kutyafulekiflivel" component={App} />
+            <Route exact path="/react-scoreboard" component={TeamPicker} />
+            <Route path="/:kutyafulekiflivel" component={Counterboard} />
             <Route component={NotFound} />
         </Switch>
     </BrowserRouter>

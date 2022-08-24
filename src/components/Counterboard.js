@@ -16,10 +16,10 @@ class Counterboard extends React.Component {
     value++;
     event.target.innerText = value;
     console.log('Goooooooooooal!');
-    console.log(this.props.myInput1);
   }
 
   resetHandler = (event) => {
+    event.preventDefault();
     event.target.parentElement.children[2].children[0].children[1].innerText = 0;
     event.target.parentElement.children[2].children[1].children[1].innerText = 0;
     console.log('Reset value');

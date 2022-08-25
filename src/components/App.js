@@ -1,10 +1,12 @@
 import React from "react";
-import Router from "./Router";
+import Counterboard from "./Counterboard";
 
-const App = () => {
-  return (
-    <Router />
-  )
+class App extends React.Component {
+    render () {
+      return (
+        <Counterboard teamNameRenderer={this.props.teamNameRenderer} />
+      )
+  }
 }
 
 export default App;

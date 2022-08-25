@@ -2,23 +2,22 @@ import React from "react";
 
 class TeamPicker extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.myInput1 = React.createRef();
-        this.myInput2 = React.createRef();
-    }
+    team1Ref = React.createRef();
+    team2Ref = React.createRef();
 
-    startMatch = (event) => {
+    getName = (event) => {
         // 1. Prevent the form from submitting
         event.preventDefault();
         // 2. Get the text from that input
-//        const teamOne = event.target[0].value;
-//        const teamTwo = event.target[1].value;
-        const teamOne = this.myInput1.current.value;
-        const teamTwo = this.myInput2.current.value;
-        const kutyafuleName = `match-${Date.now()}-${teamOne}-vs-${teamTwo}`;
-        // 3. Change the page to /team1-vs-team2-Date.now()
-        this.props.history.push(`/${kutyafuleName}`);
+        const team1 = this.team1Ref.current.value;
+        const team2 = this.team2Ref.current.value;
+        // Starting match
+        this.props.startMatch(team1, team2);
+        // Creating new page name
+        const kutyafuleName = `${team1}-vs-${team2}`;
+        // 3. Change the page to /match-team1-vs-team2
+//        this.props.history.push(`/${kutyafuleName}`);     // since TeamPicker is called via render={} props and not inserted as a component={} props, this syntax won't work
+        window.location.href = `/${kutyafuleName}`;
     }
 
     render() {
@@ -33,11 +32,11 @@ class TeamPicker extends React.Component {
                     <div className="row">&nbsp;</div>
                     <div className="row">&nbsp;</div>
                     <div className="row">&nbsp;</div>
-                    <form className="team-selector row" onSubmit={this.startMatch}>
+                    <form className="team-selector row" onSubmit={this.getName}>
                         <div id="formbox1" className="form-box col-xs-4">
                             <input 
                                 type="text" 
-                                ref={this.myInput1}
+                                ref={this.team1Ref}
                                 required
                                 placeholder="Team1" 
                                 defaultValue="Team1" />
@@ -45,7 +44,7 @@ class TeamPicker extends React.Component {
                         <div id="formbox2" className="form-box col-xs-4">
                             <input 
                                 type="text" 
-                                ref={this.myInput2}
+                                ref={this.team2Ref}
                                 required
                                 placeholder="Team2" 
                                 defaultValue="Team2" />

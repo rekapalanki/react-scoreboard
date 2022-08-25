@@ -10,9 +10,11 @@ class Counterboard extends React.Component {
     this.count2 = 0;
   }
   
+/*
   componentDidMount() {
     console.log(this.props.teamNameRenderer());
   }
+*/
 
   countHandler = (event) => {
     let value = parseFloat(event.target.innerText);
@@ -27,7 +29,6 @@ class Counterboard extends React.Component {
     event.target.parentElement.children[2].children[1].children[1].innerText = 0;
     console.log('Reset value');
   }
-
 
   render() {
     return (
